@@ -1,4 +1,5 @@
 // j'ai un doute pour la valeur Ligne dans la table Commande
+/*
 INSERT INTO Commande(Id, date_commande, prix_total, montant_frais, ligne, personne, adresse) VALUES (1, '17/03/2020', 42, 12, 1, 3, 1);
 INSERT INTO Commande(Id, date_commande, prix_total, montant_frais, ligne, personne, adresse) VALUES (2, '13/03/2020', 36, 12, 2, 2, 3);
 INSERT INTO Commande(Id, date_commande, prix_total, montant_frais, ligne, personne, adresse) VALUES (3, '16/03/2020', 12, 5, 3, 1, 2);
@@ -26,3 +27,4 @@ INSERT INTO Article(Id, libelle, couleur, prix_unitaire, modele) VALUES (3, 'che
 INSERT INTO Adresse(Id, ligne_1, ligne_2, cp, ville, pays) VALUES (1, '41 rue du port', 'rizom', '59000', 'Lille', 'France');
 INSERT INTO Adresse(Id, ligne_1, ligne_2, cp, ville, pays) VALUES (2, '60 Boulevard Vauban', 'hotal academique', '59800', 'Lille', 'France');
 INSERT INTO Adresse(Id, ligne_1, ligne_2, cp, ville, pays) VALUES (3, '2 rue d Isly', ' ', '59000', 'Lille', 'France');
+*/
