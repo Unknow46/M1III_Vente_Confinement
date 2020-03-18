@@ -39,7 +39,7 @@ class Commande{
     - date_commande DateTime
     - prix_total Float
     - montant_frais_livraison Float
-    - id_client Int
+    - id_personne Int
     - id_adresse Int
 }
 
@@ -52,13 +52,13 @@ class Ligne{
 }
 
 
-Article "0:1" o-- "1:n" Modele
+Article "0:1" --o "1:n" Modele
 Modele "1:1" --o "0:n" Rayon
 
-Article "0:n" --o "1:1" Ligne 
-Adresse "0:n" --o "1:1" Ligne
+Article "0:n" o-- "1:1" Ligne
 
-Personne "1:n" *-- "1:1" Adresse
-Commande "0:n" o-- "1:1" Ligne
+Commande "1:1" --o "1:n" Personne
+Commande "0:n" --o "1:1" Ligne
+Commande "1:1" --o "0:n" Adresse
 
 @enduml

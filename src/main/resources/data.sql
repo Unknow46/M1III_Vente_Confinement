@@ -11,5 +11,5 @@ insert into Ligne(id, quantite, prixFactureUnitaire) values (1, 36, 420)
 
 insert into Article(id, libelle, couleur, prix_unitaire) values (1, 'pantalon', 'vert', 34)
 
-insert into Adresse(id, ligne1, ligne2, cp, ville, pays) values (1, '41 rue du port', 'rizom', '59000', 'Lille', 'France')
-  **/
+insert into Adresse(id, ligne_1, ligne2, cp, ville, pays) values (1, '41 rue du port', 'rizom', '59000', 'Lille', 'France')
+**/
