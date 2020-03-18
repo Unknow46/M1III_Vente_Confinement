@@ -1,0 +1,64 @@
+@startuml Class Article
+
+class Article {
+    - id Int
+    - libelle String
+    - couleur String 
+    - prix_unitaire Float
+}
+
+class Modele{
+    - id Int
+    - libelle String
+    - taille String 
+}
+
+class Rayon{
+    - id Int
+    - libelle String 
+}
+
+class Personne{
+    - id Int
+    - nom String
+    - prenom String
+    - date_naissance DateTime 
+}
+
+class Adresse{
+    - id Int
+    - ligne_1 String
+    - ligne_2 String
+    - cp String
+    - ville String
+    - pays String
+}
+
+class Commande{
+    - id Int
+    - date_commande DateTime
+    - prix_total Float
+    - montant_frais_livraison Float
+    - id_client Int
+    - id_adresse Int
+}
+
+class Ligne{
+    - id Int
+    - id_commande Int
+    - id_article Int
+    - quantite Int
+    - prix_facture_unitaire Float
+}
+
+
+Article "0:1" o-- "1:n" Modele
+Modele "1:1" --o "0:n" Rayon
+
+Article "0:n" --o "1:1" Ligne 
+Adresse "0:n" --o "1:1" Ligne
+
+Personne "1:n" *-- "1:1" Adresse
+Commande "0:n" o-- "1:1" Ligne
+
+@enduml
