@@ -52,13 +52,13 @@ class Ligne{
 }
 
 
-Article "0:1" --o "1:n" Modele
-Modele "1:1" --o "0:n" Rayon
+Article "0:1" o-- "1:n" Modele
+Modele "1:1" o-- "0:n" Rayon
 
-Article "0:n" o-- "1:1" Ligne
+Article "0:n" --o "1:1" Ligne
 
-Commande "1:1" --o "1:n" Personne
-Commande "0:n" --o "1:1" Ligne
-Commande "1:1" --o "0:n" Adresse
+Commande "1:1" o-- "1:n" Personne
+Commande "0:n" o-- "1:1" Ligne
+Commande "1:1" o-- "0:n" Adresse
 
 @enduml
