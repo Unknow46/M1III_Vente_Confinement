@@ -20,7 +20,7 @@ public class RayonController {
     @Autowired
     RayonRepository rayonRepository;
 
-    @GetMapping("/list")
+    @GetMapping()
     public Iterable<Rayon> getListRayon() {
         Iterable<Rayon> rayons = rayonRepository.findAll();
         return rayons;
