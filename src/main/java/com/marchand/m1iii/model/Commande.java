@@ -20,8 +20,6 @@ public class Commande {
     @OneToMany
     @JoinColumn(name = "id_commande")
     private List<Ligne> ligne;
-    @OneToOne
-    private Personne personne;
 
     @OneToOne
     private Adresse adresse;

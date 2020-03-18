@@ -32,6 +32,7 @@ class Adresse{
     - cp String
     - ville String
     - pays String
+    - id_personnes Int
 }
 
 class Commande{
@@ -39,7 +40,6 @@ class Commande{
     - date_commande DateTime
     - prix_total Float
     - montant_frais_livraison Float
-    - id_personne Int
     - id_adresse Int
 }
 
@@ -52,13 +52,13 @@ class Ligne{
 }
 
 
-Article "0:1" o-- "1:n" Modele
-Modele "1:1" o-- "0:n" Rayon
+Article "0:1" *-- "1:n" Modele
+Modele "1:1" *-- "0:n" Rayon
 
 Article "0:n" --o "1:1" Ligne
 
-Commande "1:1" o-- "1:n" Personne
-Commande "0:n" o-- "1:1" Ligne
+Adresse "1:1" --* "1:1" Personne
+Commande "0:n" *-- "1:1" Ligne
 Commande "1:1" o-- "0:n" Adresse
 
 @enduml
