@@ -1,4 +1,4 @@
-package com.marchand.m1iii.Model;
+package com.marchand.m1iii.Model.Produits;
 
 import lombok.Data;
 import javax.persistence.Entity;
@@ -14,5 +14,5 @@ public class Article {
     private int id;
     private String libelle;
     private String couleur;
-    private int prix_unitaire;
+    private Float prix_unitaire;
 }

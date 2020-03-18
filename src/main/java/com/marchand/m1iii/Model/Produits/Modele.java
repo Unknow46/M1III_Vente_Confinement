@@ -1,4 +1,4 @@
-package com.marchand.m1iii.Model;
+package com.marchand.m1iii.Model.Produits;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +14,5 @@ public class Modele {
     @Id
     private int Id;
     private String libelle;
-    private String
+    private String taille;
 }
