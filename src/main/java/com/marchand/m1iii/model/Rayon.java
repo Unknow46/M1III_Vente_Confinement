@@ -1,4 +1,4 @@
-package com.marchand.m1iii.Model.Produits;
+package com.marchand.m1iii.model;
 
 
 import lombok.Data;
