@@ -9,4 +9,6 @@ import java.util.Set;
 
 @RepositoryRestResource(collectionResourceRel = "personne", path = "personnes")
 public interface PersonneRepository extends CrudRepository<Personne, Integer> {
+    Set<Personne> findPersonneById(int Id);
+
 }
