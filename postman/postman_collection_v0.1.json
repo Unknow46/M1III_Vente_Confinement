@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "249c93a7-8f49-4a35-9d15-2e525253b10e",
+		"name": "Vente_Confinement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllRayon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_api}}/rayons",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"rayons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getArticleByModele",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_api}}/articles/?idModele=2",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"articles",
+						""
+					],
+					"query": [
+						{
+							"key": "idModele",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getModeleByRayon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_api}}/modeles/?idRayon=1",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"modeles",
+						""
+					],
+					"query": [
+						{
+							"key": "idRayon",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 10,\n\t\"nom\" : \"client_test\",\n\t\"prenom\": \"prenom_test\",\n\t\"date_naissance\": \"02/03/1994\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/personnes",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"personnes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAdresse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":7,\n\t\"ligne_1\": \"1 rue de la pièce\",\n\t\"ligne_2\": \"2 rue de la pièce\",\n\t\"cp\": \"50000\",\n\t\"ville\": \"Limoge\",\n\t\"pays\": \"France\",\n\t\"personne_id\": \"11\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/adresses",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"adresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCommande",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":7,\n\t\"date_commande\": \"2020-01-01\",\n\t\"montant_frais\": 12.3, \n\t\"prix_total\": 50,\n\t\"adresse_id\": \"7\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_api}}/commandes",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"commandes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
