@@ -9,6 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface CommandeRepository extends CrudRepository<Commande, Integer> {
-    @Query("select c from Commande c inner join Adresse a on a.Id = c.adresse.Id  inner join Personne p on p.Id= a.personne.Id where p.Id =: personneId")
+    @Query("select c from Commande c inner join Adresse a on a.Id = c.adresse.Id  inner join Personne p on p.Id= a.personne.Id where p.Id = :personneId")
     Set<Commande> findCommandesByPersonne(int personneId);
 }
