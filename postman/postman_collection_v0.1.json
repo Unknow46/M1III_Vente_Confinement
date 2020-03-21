@@ -5,6 +5,35 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+
+		{
+			"name": "listeCommandeClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_api}}/commandes/?idPersonne=1",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"commandes",
+						""
+					],
+					"query": [
+						{
+							"key": "idPersonne",
+							"value": "1"
+						}
+					]
+				}
+
+
+
+		},
+			"response": []
+		},
+
 		{
 			"name": "getAllRayon",
 			"request": {
@@ -17,6 +46,12 @@
 					],
 					"path": [
 						"rayons"
+					],
+					"query": [
+						{
+							"key": "idModele",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -146,6 +181,8 @@
 					]
 				}
 			},
+
+
 			"response": []
 		}
 	],
