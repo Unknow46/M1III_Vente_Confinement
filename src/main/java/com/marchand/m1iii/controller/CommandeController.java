@@ -6,8 +6,8 @@ import com.marchand.m1iii.repository.CommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/commandes")
 @RestController
+@RequestMapping("/commandes")
 public class CommandeController {
 
     @Autowired
@@ -16,12 +16,7 @@ public class CommandeController {
     @GetMapping()
     public Iterable<Commande>AfficheCommande(@RequestParam("idPersonne") int idPersonne){
         Iterable<Commande> listeCommande = commandeRepository.findCommandesByPersonne(idPersonne);
-
         return listeCommande;
 
     }
-
-
-
-
 }
