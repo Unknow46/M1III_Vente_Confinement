@@ -20,4 +20,10 @@ public class ArticleController {
         Iterable<Article> articles = articleRepository.findArticleByModele(idModele);
         return articles;
     }
+
+    @GetMapping("/commande")
+    public Iterable<Article> getArticleByCommande(@RequestParam("idCommande") int idCommande) {
+        Iterable<Article> articles = articleRepository.findArticlesByCommande(idCommande);
+        return articles;
+    }
 }
