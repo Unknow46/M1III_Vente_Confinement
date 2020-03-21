@@ -10,5 +10,5 @@ import java.util.Set;
 
 public interface CommandeRepository extends CrudRepository<Commande, Integer> {
     @Query("select c from Commande c inner join Adresse a on a.Id = c.adresse.Id  inner join Personne p on p.Id= a.personne.Id where p.Id =: personneId")
-    static Set<Commande>findCommandeByAdresse_Personne(int personneId);
+    Set<Commande> findCommandesByPersonne(int personneId);
 }
