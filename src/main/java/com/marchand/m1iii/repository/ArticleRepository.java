@@ -13,5 +13,6 @@ public interface ArticleRepository extends CrudRepository<Article, Integer> {
 
     @Query("select l.article from Commande c join c.ligne l where c.Id = :commandeId")
     Set<Article> findArticlesByCommande(int commandeId);
+
 }
 
