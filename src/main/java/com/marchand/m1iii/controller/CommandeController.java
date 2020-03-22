@@ -1,8 +1,7 @@
 package com.marchand.m1iii.controller;
 
-import com.marchand.m1iii.model.Article;
 import com.marchand.m1iii.model.Commande;
-import com.marchand.m1iii.repository.CommandeRepository;
+import com.marchand.m1iii.service.ICommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 public class CommandeController {
 
     @Autowired
-    CommandeRepository commandeRepository;
+    ICommandeService commandeService;
 
     @GetMapping()
     public Iterable<Commande>AfficheCommande(@RequestParam("idPersonne") int idPersonne){
-        Iterable<Commande> listeCommande = commandeRepository.findCommandesByPersonne(idPersonne);
+        Iterable<Commande> listeCommande = commandeService.getCommandesByPersonne(idPersonne);
         return listeCommande;
 
     }

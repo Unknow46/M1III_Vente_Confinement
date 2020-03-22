@@ -4,6 +4,7 @@ import com.marchand.m1iii.controller.ArticleController;
 import com.marchand.m1iii.controller.CommandeController;
 import com.marchand.m1iii.controller.ModeleController;
 import com.marchand.m1iii.controller.RayonController;
+import com.marchand.m1iii.service.ICommandeService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,12 +20,11 @@ import java.time.LocalDate;
 
 @SpringBootApplication
 @EnableSwagger2WebMvc
-@ComponentScan(basePackageClasses = {
-		ArticleController.class,
-		CommandeController.class,
-		ModeleController.class,
-		RayonController.class
-
+@ComponentScan(basePackages = {
+		"com.marchand.m1iii.service",
+		"com.marchand.m1iii.controller",
+		"com.marchand.m1iii.model",
+		"com.marchand.m1iii.repository",
 })
 public class M1iiiApplication {
 

@@ -3,7 +3,6 @@ package com.marchand.m1iii.repository;
 import com.marchand.m1iii.model.Article;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.Set;
 

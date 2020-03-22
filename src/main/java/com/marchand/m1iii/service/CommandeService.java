@@ -5,8 +5,6 @@ import com.marchand.m1iii.repository.CommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -16,18 +14,6 @@ public class CommandeService implements ICommandeService {
 
     @Autowired
     CommandeRepository commandeRepository;
-
-
-    private Commande reductionOnCommande(Commande commande){
-
-
-        return commande;
-    }
-
-    private Commande reductionNbArticle(Commande commande){
-        return commande;
-    }
-
 
     private Commande reductionLieu(Commande commande){
         var addresse = commande.getAdresse().getCp();
@@ -58,7 +44,11 @@ public class CommandeService implements ICommandeService {
     }
 
     @Override
-    public Set<Commande> getCommande(Commande commande) {
-        return null;
+    public Set<Commande> getCommandesByPersonne(int personneId) {
+        Set<Commande> commandes = commandeRepository.findCommandesByPersonne(personneId);
+        for(Commande commande: commandes){
+            commande = reductionLieu(commande);
+        }
+        return commandes;
     }
 }
