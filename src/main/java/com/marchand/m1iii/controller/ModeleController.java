@@ -2,6 +2,7 @@ package com.marchand.m1iii.controller;
 
 import com.marchand.m1iii.model.Modele;
 import com.marchand.m1iii.repository.ModeleRepository;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ public class ModeleController {
     @Autowired
     ModeleRepository modeleRepository;
 
+    @ApiOperation(value = "Récupère les modèles d'un rayon")
     @GetMapping()
     public Iterable<Modele> getModeleByRayon(@RequestParam("idRayon") int idRayon) {
         Iterable<Modele> modeles = modeleRepository.findModeleByRayon(idRayon);
